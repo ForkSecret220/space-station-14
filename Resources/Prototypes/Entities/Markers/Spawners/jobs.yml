@@ -604,3 +604,15 @@
     layers:
       - state: green
       - state: zookeeper
+
+- type: entity
+  id: SpawnPointVoidZoneAdmiralNanoTrasen
+  parent: SpawnPointJobBase
+  name: Admiral NanoTrazen
+  components:
+    - type: SpawnPoint
+      job_id: AdmiralVoidZone
+    - type: Sprite
+      layers:
+        - state: green
+        - state: boxer

@@ -1,0 +1,45 @@
+# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
+- type: job
+  id: AdmiralVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneAdmiral
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: AdmiralVZGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoS
+    back: ClothingBackpackHOSFilled
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: ClothingOuterCoatHoSTrench
+    eyes: ClothingEyesGlassesSecurity #ss-220-GlassesSecurity
+    head: ClothingHeadBigCapHoS # SS220 NewHatForHoS
+    id: HoSPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltSecurity
+    belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58
+    pocket2: MagazinePistol
+  innerClothingSkirt: ClothingUniformJumpskirtHoS
+  satchel: ClothingBackpackSatchelHOSFilled
+  duffelbag: ClothingBackpackDuffelHOSFilled

@@ -133,3 +133,21 @@
   - GhostRole
   primary: false
   weight: -100
+
+- type: department
+  id: VoidZoneNanoTrasen
+  description: department-Cargo-description
+  color: "#A46106"
+  sort: 0
+  roles:
+  - AdmiralVoidZone
+  weight: 200
+
+- type: department
+  id: VoidZoneSyndicate
+  description: department-Cargo-description
+  color: "#A46106"
+  sort: 0
+  roles:
+  - Captain
+  weight: 200

@@ -75,6 +75,15 @@
     faction: Syndicate
 
 - type: entity
+  id: VoidZone
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: GameRule
+    minPlayers: 0
+  - type: VoidZoneRule
+
+- type: entity
   id: Pirates
   parent: BaseGameRule
   noSpawn: true

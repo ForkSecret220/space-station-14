@@ -112,17 +112,13 @@
     - DeathMatch31
 
 - type: gamePreset
-  id: Nukeops
-  alias:
-    - nukeops
-  name: nukeops-title
-  description: nukeops-description
+  id: VoidZone
+  name: voidzone-title
+  description: voidzone-description
   showInVote: false
+  supportedMaps: VoidZoneMapPool
   rules:
-    - Nukeops
-    - SubGamemodesRule
-    - BasicStationEventScheduler
-    - BasicRoundstartVariation
+    - VoidZone
 
 #- type: gamePreset
 #  id: Revolutionary
