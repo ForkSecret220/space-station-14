@@ -9,6 +9,7 @@ using Content.Server.Humanoid;
 using Content.Server.Mind;
 using Content.Server.NPC.Components;
 using Content.Server.NPC.Systems;
+using Robust.Server.Player;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server.RandomMetadata;
@@ -16,9 +17,9 @@ using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
+using Robust.Shared.Player;
 using Content.Shared.Roles;
 using Content.Shared.Tag;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
@@ -89,6 +90,8 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 
             if (ev.PlayerPool.Count == 0)
                 continue;
+
+            var nukiesToSelect = _antagSelection.CalculateAntagCount(_playerManager.PlayerCount, voidzone.PlayersPerSyndie, voidzone.MaxVoidSyndie);
 
         }
 

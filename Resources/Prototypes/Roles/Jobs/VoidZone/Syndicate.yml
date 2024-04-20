@@ -1,0 +1,191 @@
+- type: job
+  id: AdmiralSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateAdmiral
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: StarpomSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateStarpom
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+- type: job
+  id: CommanderSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateCommander
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: WarriorSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateWarrior
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: OficerSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateOficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: EngineerSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: MedicalSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateMedical
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: MatrosSyndicateVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneSyndicateMatros
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneSyndicate
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  antagonist: true
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff

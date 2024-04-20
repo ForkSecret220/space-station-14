@@ -1,9 +1,191 @@
 # © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
 - type: job
-  id: AdmiralVoidZone
+  id: AdmiralNanoTrasenVoidZone
   name: job-name-voidzone-admiral
   description: job-description-voidzone-admiral
-  playTimeTracker: JobVoidZoneAdmiral
+  playTimeTracker: JobVoidZoneNanoTrasenAdmiral
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: StarpomNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenStarpom
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: CommanderNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenCommander
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: WarriorNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenWarrior
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: OficerNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenOficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: EngineerNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: MedicalNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenMedical
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: VoidZoneNanoTrasen
+      time: 180000 # SS220-RoleTime
+  weight: 10
+  startingGear: AdmiralVZGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  canBeZombie: false
+  radioBold: true
+  access:
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: job
+  id: MatrosNanoTrasenVoidZone
+  name: job-name-voidzone-admiral
+  description: job-description-voidzone-admiral
+  playTimeTracker: JobVoidZoneNanoTrasenMatros
   requirements:
     - !type:DepartmentTimeRequirement
       department: VoidZoneNanoTrasen

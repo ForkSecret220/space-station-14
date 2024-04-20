@@ -21,3 +21,22 @@
   noSpawn: true
   components:
     - type: Transform
+    - type: StationJobs
+      availableJobs:
+        AdmiralNanoTrasenVoidZone: [ 1, 1 ]
+        CommanderNanoTrasenVoidZone: [ 1, 1 ]
+        StarpomNanoTrasenVoidZone: [ 1, 1 ]
+        WarriorNanoTrasenVoidZone: [ 1, 1 ]
+        OficerNanoTrasenVoidZone: [ 1, 1 ]
+        EngineerNanoTrasenVoidZone: [ 1, 1 ]
+        MedicalNanoTrasenVoidZone: [ 1, 1 ]
+        MatrosNanoTrasenVoidZone: [ 1, 1 ]
+        #syndicate
+        AdmiralSyndicateVoidZone: [ 1, 1 ]
+        CommanderSyndicateVoidZone: [ 1, 1 ]
+        StarpomSyndicateVoidZone: [ 1, 1 ]
+        WarriorSyndicateVoidZone: [ 1, 1 ]
+        OficerSyndicateVoidZone: [ 1, 1 ]
+        EngineerSyndicateVoidZone: [ 1, 1 ]
+        MedicalSyndicateVoidZone: [ 1, 1 ]
+        MatrosSyndicateVoidZone: [ 1, 1 ]

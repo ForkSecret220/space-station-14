@@ -4,152 +4,197 @@
   id: Overall
 
 # Jobs
-- type: playTimeTracker
-  id: JobAtmosphericTechnician
+#- type: playTimeTracker
+#  id: JobAtmosphericTechnician
+#
+#- type: playTimeTracker
+#  id: JobBartender
+#
+#- type: playTimeTracker # Used as a tracker for all borgs and midround borging.
+#  id: JobBorg
+#
+#- type: playTimeTracker
+#  id: JobBotanist
+#
+#- type: playTimeTracker
+#  id: JobCaptain
+#
+#- type: playTimeTracker
+#  id: JobCargoTechnician
+#
+#- type: playTimeTracker
+#  id: JobCentralCommandOfficial
+#
+#- type: playTimeTracker
+#  id: JobChaplain
+#
+#- type: playTimeTracker
+#  id: JobChef
+#
+#- type: playTimeTracker
+#  id: JobChemist
+#
+#- type: playTimeTracker
+#  id: JobChiefEngineer
+#
+#- type: playTimeTracker
+#  id: JobChiefMedicalOfficer
+#
+#- type: playTimeTracker
+#  id: JobClown
+#
+#- type: playTimeTracker
+#  id: JobDetective
+#
+#- type: playTimeTracker
+#  id: JobERTEngineer
+#
+#- type: playTimeTracker
+#  id: JobERTJanitor
+#
+#- type: playTimeTracker
+#  id: JobERTLeader
+#
+#- type: playTimeTracker
+#  id: JobERTMedical
+#
+#- type: playTimeTracker
+#  id: JobERTSecurity
+#
+#- type: playTimeTracker
+#  id: JobHeadOfPersonnel
+#
+#- type: playTimeTracker
+#  id: JobHeadOfSecurity
+#
+#- type: playTimeTracker
+#  id: JobSecurityPilot
+#
+#- type: playTimeTracker
+#  id: JobBrigmedic
+#
+#- type: playTimeTracker
+#  id: JobJanitor
+#
+#- type: playTimeTracker
+#  id: JobLawyer
+#
+#- type: playTimeTracker
+#  id: JobLibrarian
+#
+#- type: playTimeTracker
+#  id: JobMedicalDoctor
+#
+#- type: playTimeTracker
+#  id: JobMedicalIntern
+#
+#- type: playTimeTracker
+#  id: JobMime
+#
+#- type: playTimeTracker
+#  id: JobMusician
+#
+#- type: playTimeTracker
+#  id: JobPassenger
+#
+#- type: playTimeTracker
+#  id: JobParamedic
+#
+#- type: playTimeTracker
+#  id: JobPsychologist
+#
+#- type: playTimeTracker
+#  id: JobQuartermaster
+#
+#- type: playTimeTracker
+#  id: JobReporter
+#
+#- type: playTimeTracker
+#  id: JobResearchAssistant
+#
+#- type: playTimeTracker
+#  id: JobResearchDirector
+#
+#- type: playTimeTracker
+#  id: JobSalvageSpecialist
+#
+#- type: playTimeTracker
+#  id: JobScientist
+#
+#- type: playTimeTracker
+#  id: JobSecurityCadet
+#
+#- type: playTimeTracker
+#  id: JobSecurityOfficer
+#
+#- type: playTimeTracker
+#  id: JobServiceWorker
+#
+#- type: playTimeTracker
+#  id: JobStationEngineer
+#
+#- type: playTimeTracker
+#  id: JobTechnicalAssistant
+#
+#- type: playTimeTracker
+#  id: JobVisitor
+#
+#- type: playTimeTracker
+#  id: JobWarden
+#
+#- type: playTimeTracker
+#  id: JobBoxer
+#
+#- type: playTimeTracker
+#  id: JobZookeeper
+#
+#- type: playTimeTracker
+#  id: JobBlueShield
 
 - type: playTimeTracker
-  id: JobBartender
-
-- type: playTimeTracker # Used as a tracker for all borgs and midround borging.
-  id: JobBorg
+  id: JobVoidZoneNanoTrasenAdmiral
 
 - type: playTimeTracker
-  id: JobBotanist
+  id: JobVoidZoneNanoTrasenStarpom
 
 - type: playTimeTracker
-  id: JobCaptain
+  id: JobVoidZoneNanoTrasenCommander
 
 - type: playTimeTracker
-  id: JobCargoTechnician
+  id: JobVoidZoneNanoTrasenWarrior
 
 - type: playTimeTracker
-  id: JobCentralCommandOfficial
+  id: JobVoidZoneNanoTrasenOficer
 
 - type: playTimeTracker
-  id: JobChaplain
+  id: JobVoidZoneNanoTrasenEngineer
 
 - type: playTimeTracker
-  id: JobChef
+  id: JobVoidZoneNanoTrasenMedical
 
 - type: playTimeTracker
-  id: JobChemist
+  id: JobVoidZoneNanoTrasenMatros
 
 - type: playTimeTracker
-  id: JobChiefEngineer
+  id: JobVoidZoneSyndicateAdmiral
 
 - type: playTimeTracker
-  id: JobChiefMedicalOfficer
+  id: JobVoidZoneSyndicateStarpom
 
 - type: playTimeTracker
-  id: JobClown
+  id: JobVoidZoneSyndicateCommander
 
 - type: playTimeTracker
-  id: JobDetective
+  id: JobVoidZoneSyndicateWarrior
 
 - type: playTimeTracker
-  id: JobERTEngineer
+  id: JobVoidZoneSyndicateOficer
 
 - type: playTimeTracker
-  id: JobERTJanitor
+  id: JobVoidZoneSyndicateEngineer
 
 - type: playTimeTracker
-  id: JobERTLeader
+  id: JobVoidZoneSyndicateMedical
 
 - type: playTimeTracker
-  id: JobERTMedical
-
-- type: playTimeTracker
-  id: JobERTSecurity
-
-- type: playTimeTracker
-  id: JobHeadOfPersonnel
-
-- type: playTimeTracker
-  id: JobHeadOfSecurity
-
-- type: playTimeTracker
-  id: JobSecurityPilot
-
-- type: playTimeTracker
-  id: JobBrigmedic
-
-- type: playTimeTracker
-  id: JobJanitor
-
-- type: playTimeTracker
-  id: JobLawyer
-
-- type: playTimeTracker
-  id: JobLibrarian
-
-- type: playTimeTracker
-  id: JobMedicalDoctor
-
-- type: playTimeTracker
-  id: JobMedicalIntern
-
-- type: playTimeTracker
-  id: JobMime
-
-- type: playTimeTracker
-  id: JobMusician
-
-- type: playTimeTracker
-  id: JobPassenger
-
-- type: playTimeTracker
-  id: JobParamedic
-
-- type: playTimeTracker
-  id: JobPsychologist
-
-- type: playTimeTracker
-  id: JobQuartermaster
-
-- type: playTimeTracker
-  id: JobReporter
-
-- type: playTimeTracker
-  id: JobResearchAssistant
-
-- type: playTimeTracker
-  id: JobResearchDirector
-
-- type: playTimeTracker
-  id: JobSalvageSpecialist
-
-- type: playTimeTracker
-  id: JobScientist
-
-- type: playTimeTracker
-  id: JobSecurityCadet
-
-- type: playTimeTracker
-  id: JobSecurityOfficer
-
-- type: playTimeTracker
-  id: JobServiceWorker
-
-- type: playTimeTracker
-  id: JobStationEngineer
-
-- type: playTimeTracker
-  id: JobTechnicalAssistant
-
-- type: playTimeTracker
-  id: JobVisitor
-
-- type: playTimeTracker
-  id: JobWarden
-
-- type: playTimeTracker
-  id: JobBoxer
-
-- type: playTimeTracker
-  id: JobZookeeper
-
-- type: playTimeTracker
-  id: JobBlueShield
-
-- type: playTimeTracker
-  id: JobVoidZoneAdmiral
+  id: JobVoidZoneSyndicateMatros
