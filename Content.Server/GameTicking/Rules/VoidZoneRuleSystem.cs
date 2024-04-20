@@ -14,6 +14,7 @@ using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server.RandomMetadata;
 using Content.Server.RoundEnd;
+using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Server.Store.Systems;
@@ -22,20 +23,14 @@ using Content.Shared.Roles;
 using Content.Shared.Tag;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Content.Server.Shuttles.Events;
 
 namespace Content.Server.GameTicking.Rules;
 
 public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IServerPreferencesManager _prefs = default!;
-    [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly EmergencyShuttleSystem _emergency = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly RandomMetadataSystem _randomMetadata = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
@@ -69,6 +64,7 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 
         SubscribeLocalEvent<RoundStartAttemptEvent>(OnStartAttempt);
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnPlayersSpawning);
+        SubscribeLocalEvent<ControlShuttleEvent>(OnShuttleControlAttempt);
     }
 
     protected override void Started(EntityUid uid, VoidZoneRuleComponent component, GameRuleComponent gameRule,
@@ -96,6 +92,28 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
         }
 
     }
+    private void OnShuttleControlAttempt(ref ControlShuttleEvent ev)
+    {
+        var query = EntityQueryEnumerator<GameRuleComponent, NukeopsRuleComponent>();
+        while (query.MoveNext(out _, out _, out var nukeops))
+        {
+            //if (!HasComp<ShuttleConsoleComponent>(ev.Uid))  // badcode?
+            ///   continue;
+
+            if (nukeops.WarDeclaredTime != null)
+            {
+                var timeAfterDeclaration = Timing.CurTime.Subtract(nukeops.WarDeclaredTime.Value);
+                var timeRemain = nukeops.WarNukieArriveDelay.Subtract(timeAfterDeclaration);
+                if (timeRemain > TimeSpan.Zero)
+                {
+                    ev.Cancelled = true;
+                    ev.Reason = Loc.GetString("ОШИБКА: Обнаружен ионный шторм. Управление недоступно.");
+                    continue;
+                }
+            }
+
+        }
+    }
     private sealed class VoidZoneSpawn
     {
         public ICommonSession? Session { get; private set; }
@@ -107,4 +125,5 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
             Type = type;
         }
     }
+
 }

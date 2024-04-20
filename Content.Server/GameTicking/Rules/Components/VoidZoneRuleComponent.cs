@@ -14,9 +14,6 @@ public sealed partial class VoidZoneRuleComponent : Component
 
     public int MaxVoidSyndie = 70;
 
-    [DataField(required: true)]
-    public ProtoId<NpcFactionPrototype> Faction = default!;
-
     [DataField]
     public VoidZoneSpawnPreset AdmiralSpawnDetails = new() { AntagRoleProto = "AdmiralSyndicateVoidZone", GearProto = "SyndicateCommanderGearFull", NamePrefix = "nukeops-role-commander", NameList = "SyndicateNamesElite" };
 }

@@ -1,5 +1,6 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Popups; /// ss220 voidzone
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Systems;
@@ -33,6 +34,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TagSystem _tags = default!;
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    /// <summary>
+    /// ss220 voidzone
+    /// </summary>
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContentEyeSystem _eyeSystem = default!;
 
@@ -177,6 +182,15 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         var pilotComponent = EnsureComp<PilotComponent>(user);
         var console = pilotComponent.Console;
+
+        var ev = new ControlShuttleEvent(uid, false, string.Empty);
+        RaiseLocalEvent(uid, ref ev, true);
+
+        if (ev.Cancelled)
+        {
+            _popupSystem.PopupEntity(ev.Reason, uid);
+            return false;
+        }
 
         if (console != null)
         {
