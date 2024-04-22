@@ -3,14 +3,17 @@
 Jokerge
 */
 using Content.Server.Antag;
+using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.NPC.Components;
 using Robust.Server.Player;
 using Content.Server.RoundEnd;
+using Content.Server.Shuttles.Events;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Robust.Shared.Map;
 using Content.Shared.Roles;
-using Content.Server.Shuttles.Events;
+using Robust.Shared.Timing;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -18,6 +21,7 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
@@ -67,6 +71,10 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 
     private void OnPlayersSpawning(RulePlayerSpawningEvent ev)
     {
+        ///VoidZoneRuleSystem.Comp.Message = Loc.GetString("war-declarator-default-message");
+        ///voidzone.Comp.DisableAt = _gameTiming.CurTime + TimeSpan.FromMinutes(VoidZoneRuleComponent.Comp.StartDeclarationDelay);
+        ///Я  в душе не ебу как привязать хуйню
+
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out var voidzone, out var gameRule))
         {
@@ -91,6 +99,7 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
             {
                 var timeAfterDeclaration = Timing.CurTime.Subtract(voidzone.BriefingTimeVoidZone.Value);
                 var timeRemain = voidzone.BriefingTimerVoidZone.Subtract(timeAfterDeclaration);
+
                 if (timeRemain > TimeSpan.Zero)
                 {
                     ev.Cancelled = true;
@@ -101,6 +110,7 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
             }
 
         }
+
     }
 
 }
