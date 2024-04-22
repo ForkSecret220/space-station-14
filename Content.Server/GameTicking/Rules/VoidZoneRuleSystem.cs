@@ -2,27 +2,14 @@
 Созревает вопрос, как я всё это писал с нулевыми знаниями C#. Ответ я в душе не ебу
 Jokerge
 */
-using Content.Server.Administration.Managers;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Server.Humanoid;
-using Content.Server.Mind;
 using Content.Server.NPC.Components;
-using Content.Server.NPC.Systems;
 using Robust.Server.Player;
-using Content.Server.Popups;
-using Content.Server.Preferences.Managers;
-using Content.Server.RandomMetadata;
 using Content.Server.RoundEnd;
-using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Systems;
-using Content.Server.Store.Systems;
-using Robust.Shared.Player;
-using Content.Shared.Roles;
-using Content.Shared.Tag;
+using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
-using Robust.Shared.Prototypes;
+using Content.Shared.Roles;
 using Content.Server.Shuttles.Events;
 
 namespace Content.Server.GameTicking.Rules;
@@ -31,15 +18,8 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly RandomMetadataSystem _randomMetadata = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly SharedRoleSystem _roles = default!;
-    [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
-    [Dependency] private readonly StoreSystem _store = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
     private ISawmill _sawmill = default!;
 
@@ -65,6 +45,13 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
         SubscribeLocalEvent<RoundStartAttemptEvent>(OnStartAttempt);
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnPlayersSpawning);
         SubscribeLocalEvent<ControlShuttleEvent>(OnShuttleControlAttempt);
+    }
+
+    protected override void Added(EntityUid uid, VoidZoneRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
+    {
+        base.Added(uid, component, gameRule, args);
+
+        gameRule.MinPlayers = _cfg.GetCVar(CCVars.VoidZoneMinPlayers);
     }
 
     protected override void Started(EntityUid uid, VoidZoneRuleComponent component, GameRuleComponent gameRule,
@@ -94,35 +81,25 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
     }
     private void OnShuttleControlAttempt(ref ControlShuttleEvent ev)
     {
-        var query = EntityQueryEnumerator<GameRuleComponent, NukeopsRuleComponent>();
-        while (query.MoveNext(out _, out _, out var nukeops))
+        var query = EntityQueryEnumerator<GameRuleComponent, VoidZoneRuleComponent>();
+        while (query.MoveNext(out _, out _, out var voidzone))
         {
             //if (!HasComp<ShuttleConsoleComponent>(ev.Uid))  // badcode?
             ///   continue;
 
-            if (nukeops.WarDeclaredTime != null)
+            if (voidzone.BriefingTimeVoidZone != null)
             {
-                var timeAfterDeclaration = Timing.CurTime.Subtract(nukeops.WarDeclaredTime.Value);
-                var timeRemain = nukeops.WarNukieArriveDelay.Subtract(timeAfterDeclaration);
+                var timeAfterDeclaration = Timing.CurTime.Subtract(voidzone.BriefingTimeVoidZone.Value);
+                var timeRemain = voidzone.BriefingTimerVoidZone.Subtract(timeAfterDeclaration);
                 if (timeRemain > TimeSpan.Zero)
                 {
                     ev.Cancelled = true;
-                    ev.Reason = Loc.GetString("ОШИБКА: Обнаружен ионный шторм. Управление недоступно.");
+                    ev.Reason = Loc.GetString("ОШИБКА: Обнаружен ионный шторм. Управление недоступно.",
+                                    ("time", timeRemain.ToString("mm\\:ss")));
                     continue;
                 }
             }
 
-        }
-    }
-    private sealed class VoidZoneSpawn
-    {
-        public ICommonSession? Session { get; private set; }
-        public VoidZoneSpawnPreset Type { get; private set; }
-
-        public VoidZoneSpawn(ICommonSession? session, VoidZoneSpawnPreset type)
-        {
-            Session = session;
-            Type = type;
         }
     }
 

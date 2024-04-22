@@ -500,6 +500,13 @@ namespace Content.Shared.CCVar
             CVarDef.Create("zombie.min_players", 20);
 
         /*
+         * VoidZone
+        */
+
+        public static readonly CVarDef<int> VoidZoneMinPlayers =
+            CVarDef.Create("voidzone.min_players", 0);
+
+        /*
          * Pirates
          */
 
