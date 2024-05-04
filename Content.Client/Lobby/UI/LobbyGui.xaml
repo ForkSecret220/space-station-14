@@ -43,6 +43,16 @@
                                 </controls:StripeBack>
                             </BoxContainer>
                         </PanelContainer>
+                        <!-- SS220 Parties start-->
+                        <PanelContainer StyleClasses="AngleRect" HorizontalAlignment="Left" Name="LeftSideTop2"
+                                        VerticalAlignment="Top">
+                             <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="800">
+                                <Button Name="ReadyButton2" Access="Public" ToggleMode="True"
+                                                Text="{Loc 'ui-lobby-ready-up-button'}"
+                                                StyleClasses="ButtonBig" MinWidth="137" />
+                             </BoxContainer>
+                        </PanelContainer>
+                        <!-- SS220 Parties end-->
                         <!-- Voting Popups -->
                         <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer"
                                       Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 8" />
