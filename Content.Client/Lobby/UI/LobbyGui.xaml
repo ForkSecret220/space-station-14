@@ -19,7 +19,7 @@
             <BoxContainer Name="LeftSide" Orientation="Vertical" SeparationOverride="4" HorizontalExpand="True">
                 <Control Name="DefaultState" VerticalExpand="True">
                     <BoxContainer Name="TopLeft" Orientation="Vertical">
-                        <!-- Left Top Panel -->
+                     ы   <!-- Left Top Panel -->
                         <PanelContainer StyleClasses="AngleRect" HorizontalAlignment="Left" Name="LeftSideTop"
                                         VerticalAlignment="Top">
                             <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="800">
@@ -43,7 +43,12 @@
                                 </controls:StripeBack>
                             </BoxContainer>
                         </PanelContainer>
-                        <!-- SS220 Parties start-->
+                        <!-- Voting Popups -->
+                        <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer"
+                                      Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 8" />
+                    </BoxContainer>
+                    <!-- SS220 Parties start-->
+                    <BoxContainer Name="TopLeft" Orientation="Vertical">
                         <PanelContainer StyleClasses="AngleRect" HorizontalAlignment="Left" Name="LeftSideTop2"
                                         VerticalAlignment="Top">
                              <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="800">
@@ -52,11 +57,8 @@
                                                 StyleClasses="ButtonBig" MinWidth="137" />
                              </BoxContainer>
                         </PanelContainer>
-                        <!-- SS220 Parties end-->
-                        <!-- Voting Popups -->
-                        <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer"
-                                      Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 8" />
                     </BoxContainer>
+                    <!-- SS220 Parties end-->
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
