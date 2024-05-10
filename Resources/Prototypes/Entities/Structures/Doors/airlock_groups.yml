@@ -1,7 +1,7 @@
-#- type: AirlockGroup
-#  id: Standard
-#  iconPriority: 100
-#  stylePaths:
+- type: AirlockGroup
+  id: Standard
+  iconPriority: 100
+  stylePaths:
 #    atmospherics: Structures/Doors/Airlocks/Standard/atmospherics.rsi
 #    basic:       Structures/Doors/Airlocks/Standard/basic.rsi
 #    cargo:       Structures/Doors/Airlocks/Standard/cargo.rsi
@@ -14,10 +14,10 @@
 #    security:    Structures/Doors/Airlocks/Standard/security.rsi
 #    virology:    Structures/Doors/Airlocks/Standard/virology.rsi
 #
-#- type: AirlockGroup
-#  id: Glass
-#  iconPriority: 90
-#  stylePaths:
+- type: AirlockGroup
+  id: Glass
+  iconPriority: 90
+  stylePaths:
 #    atmospherics: Structures/Doors/Airlocks/Glass/atmospherics.rsi
 #    basic:       Structures/Doors/Airlocks/Glass/basic.rsi
 #    command:     Structures/Doors/Airlocks/Glass/command.rsi
@@ -60,10 +60,10 @@
   stylePaths:
     shuttle:     Structures/Doors/Airlocks/Glass/shuttle.rsi
 
-# fun
-#- type: airlockDepartments
-#  id: Departments
-#  departments:
+ fun
+- type: airlockDepartments
+  id: Departments
+  departments:
 #    atmospherics: Engineering
 #    basic: Civilian
 #    cargo: Cargo
