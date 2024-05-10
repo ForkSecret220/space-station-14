@@ -256,6 +256,14 @@
   - LawyerNeck
 
 - type: loadoutGroup
+  id: LawyerBackpack
+  name: loadout-group-lawyer-backpack
+  loadouts:
+  - LawyerBackpack
+  - LawyerSatchel
+  - LawyerDuffel
+
+- type: loadoutGroup
   id: ChaplainHead
   name: loadout-group-chaplain-head
   minLimit: 0
@@ -911,12 +919,14 @@
   - SecuritySatchel
   - SecurityDuffel
 
-- type: loadoutGroup
-  id: SecurityBelt
-  name: loadout-group-security-belt
-  loadouts:
-  - SecurityBelt
-  - SecurityWebbing
+#SS220-TweakSecurityWebbing-Begin
+# - type: loadoutGroup
+#   id: SecurityBelt
+#   name: loadout-group-security-belt
+#   loadouts:
+#   - SecurityBelt
+#   - SecurityWebbing
+#SS220-TweakSecurityWebbing-End
 
 - type: loadoutGroup
   id: SecurityOuterClothing
