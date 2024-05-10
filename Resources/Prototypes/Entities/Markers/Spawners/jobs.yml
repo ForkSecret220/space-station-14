@@ -282,17 +282,18 @@
 #
 ## Command
 #
-#- type: entity
-#  id: SpawnPointCaptain
-#  parent: SpawnPointJobBase
-#  name: captain
-#  components:
-#  - type: SpawnPoint
-#    job_id: Captain
-#  - type: Sprite
-#    layers:
-#      - state: green
-#      - state: captain
+# NEEDED FOR DEBUG MAP
+- type: entity
+  id: SpawnPointCaptain
+  parent: SpawnPointJobBase
+  name: captain
+  components:
+  - type: SpawnPoint
+    job_id: Captain
+  - type: Sprite
+    layers:
+      - state: green
+      - state: captain
 #
 #- type: entity
 #  id: SpawnPointHeadOfPersonnel

@@ -148,7 +148,7 @@ WarpPointBeaconService: null
 
 # 2023-12-30
 ClothingEyesGlassesCosmeticSunglasses: ClothingEyesGlassesSunglasses
-SpawnPointAssistant: SpawnPointPassenger
+SpawnPointAssistant: null # 2024-05-10 VoidZone-initial
 
 # 2024-01-02 - SS220 Stairs
 StairsSolo: SteelStairsSolo

@@ -1,9 +1,5 @@
 // © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
 
-/*
-Созревает вопрос, как я всё это писал с нулевыми знаниями C#. Ответ я в душе не ебу
-Jokerge
-*/
 using Content.Server.Antag;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking.Rules.Components;
@@ -16,6 +12,8 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Content.Shared.Roles;
 using Robust.Shared.Timing;
+using Content.Server.GameTicking.Components;
+using Content.Shared.NPC.Prototypes;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -48,7 +46,7 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 
         _sawmill = _logManager.GetSawmill("VoidZone");
 
-        SubscribeLocalEvent<RoundStartAttemptEvent>(OnStartAttempt);
+        //SubscribeLocalEvent<RoundStartAttemptEvent>(OnStartAttempt);
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnPlayersSpawning);
         SubscribeLocalEvent<ControlShuttleEvent>(OnShuttleControlAttempt);
     }
@@ -68,7 +66,8 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
 
     private void OnStartAttempt(RoundStartAttemptEvent ev)
     {
-        TryRoundStartAttempt(ev, Loc.GetString("voidzone-title"));
+        //TryRoundStartAttempt(ev, Loc.GetString("voidzone-title"));
+        Log.Debug("VOIDZONE ROUND STARTED");
     }
 
     private void OnPlayersSpawning(RulePlayerSpawningEvent ev)
@@ -84,7 +83,7 @@ public sealed class VoidZoneRuleSystem : GameRuleSystem<VoidZoneRuleComponent>
             if (ev.PlayerPool.Count == 0)
                 continue;
 
-            var nukiesToSelect = _antagSelection.CalculateAntagCount(_playerManager.PlayerCount, voidzone.PlayersPerSyndie, voidzone.MaxVoidSyndie);
+            //var nukiesToSelect = _antagSelection.GetTargetAntagCount(_playerManager.PlayerCount, voidzone.PlayersPerSyndie, voidzone.MaxVoidSyndie);
 
         }
 
