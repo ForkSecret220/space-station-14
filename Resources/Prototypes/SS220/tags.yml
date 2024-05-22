@@ -30,10 +30,17 @@
 # ss220 shlepi
 - type: Tag
   id: ElWyccoAxe
- 
+
 - type: Tag
   id: Meatwheat
 
 # ss220 detective-camera
 - type: Tag
   id: DetectiveCamera
+
+- type: Tag
+  id: MindSlave
+
+# SS220-JianSword
+- type: Tag
+  id: JianSword
